@@ -159,6 +159,25 @@ Failed_RDP_GEO_CL
 
 ![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/a4c6f87e-4554-4dbe-82b1-1b20a6a184cd)
 
+Forr some reason there were issues where the custom KQL query was only showing the sample data and did not include any of my failed login attempts. The issue was due to the custom .ps1 script attached had space after the country selector, so what does that even mean? Well the sample data records were recoreded in the custom log as:
+
+```
+",country:"
+```
+In the new log records because of this space i the above KQL query did not find these new events as they were logged as:
+
+```
+", country:"
+```
+
+Notice the space! I have now edited the script and removed the spaces from the logs file located in 'C:\ProgramData\failed_rdp.log'. now we have what we need, we now wait.
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/f9be1413-32f9-4067-a6f9-6b1b8fb75d2e)
+
+Date: 08/07/24 - I will leave all this set for a day or 2 then come back with an updated screen shot of anyone attempting to log into our honeypot server.
+
+
+
 
 
 
