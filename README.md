@@ -122,10 +122,38 @@ Within the logs we need to wait for the custom rule to show up, im to make a cof
 
 ![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/852deb52-519e-4639-bd86-470c509bfe23)
 
+Were back and we have logs.
 
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/dad1f507-897d-4c9f-8e23-7f01e1320239)
 
+## Step 9 - Extract the data
 
+In this step i need to extract the data from the above log from within the 'RawData' field to create my own fields with the data sperated. To do this i need to create a custom KQL Query 
 
+```
+Failed_RDP_GEO_CL
+| parse RawData with * "latitude:" Latitude ",longitude:" Longitude ",destinationhost:" Destinationhost ",username:" Username ",sourcehost:" Sourcehost ",state:" State ",country:" Country ",label:" Label ",timestamp:" Timestamp
+| project
+    Latitude,Longitude,Destinationhost,Username,Sourcehost,State,Country,Label,Timestamp
+```
+
+This custom query parses out the fields i want to see and we can save this query.
+
+## Step 10 - Sentinel Map
+
+In this step i need to open Sentinel and select 'Workbooks' from the menu then 'Add Workbook'
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/2cdbfb1a-1535-400e-9424-eaff70a1e651)
+
+Now were going to click 'Add' then were going to 'Add Query' here again were going to use a custom KQL query to give us the data we need and add in 'summarize event_count=count() by' so we can use the 'Event Count' to Change the size of the dots on the map to show attack count size.
+
+```
+Failed_RDP_GEO_CL
+| parse RawData with * "latitude:" Latitude ",longitude:" Longitude ",destinationhost:" Destinationhost ",username:" Username ",sourcehost:" Sourcehost ",state:" State ",country:" Country ",label:" Label ",timestamp:" Timestamp
+| project
+    Sourcehost,Latitude,Longitude,Country,Label,Destinationhost
+| summarize event_count=count() by Sourcehost,Latitude,Longitude,Country,Label,Destinationhost
+```
 
 
 
