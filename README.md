@@ -102,6 +102,27 @@ Opening up the log file we can see the sample data plus the failed logins from m
 
 ![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/6a3cd009-da20-4a98-83d7-3d4ea5972723)
 
+## Step 8 - Azure Custom Log
+
+In this step i will bring in this cutom log into the Log analytics Workspace, we need to go to our workspace and select our workspace we created 'LAW_Honeypot1' and then under settings select
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/97c4489d-0180-42a2-97cb-0412d6952a1e)
+
+The first this it will ask for a sample log. Here will add a copy of the contents of the new log file we created, were copying this log as its on our virtual machine not on our host computer. This is going to be used to train the log analytics to choose the corect fields for the logs.
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/465f9ea0-ea08-4c1d-bc40-9b8257d6a2c5)
+
+After importing we need to tell it where the logs are on our Virtual Machine. then give this a name, im naming mine 'Failed_RDP_GEO'
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/ace26c5a-b9ec-4200-acc7-9ddd7a2054dc)
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/dc32c08d-9c0e-4746-abd2-9df0ffd8ad2b)
+
+Within the logs we need to wait for the custom rule to show up, im to make a coffee then will check back in :)
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/852deb52-519e-4639-bd86-470c509bfe23)
+
+
 
 
 
