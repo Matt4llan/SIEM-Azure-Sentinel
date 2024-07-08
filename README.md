@@ -145,7 +145,7 @@ In this step i need to open Sentinel and select 'Workbooks' from the menu then '
 
 ![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/2cdbfb1a-1535-400e-9424-eaff70a1e651)
 
-Now were going to click 'Add' then were going to 'Add Query' here again were going to use a custom KQL query to give us the data we need and add in 'summarize event_count=count() by' so we can use the 'Event Count' to Change the size of the dots on the map to show attack count size.
+Now were going to click 'Add' then were going to 'Add Query' here again were going to use a custom KQL query to give us the data we need and add in 'summarize event_count=count() by' so we can use the 'Event Count' to Change the size of the dots on the map to show attack count size. I also want to remove the 'Sample Data' that was added and also remove and empty entries from the log.
 
 ```
 Failed_RDP_GEO_CL
@@ -153,6 +153,8 @@ Failed_RDP_GEO_CL
 | project
     Sourcehost,Latitude,Longitude,Country,Label,Destinationhost
 | summarize event_count=count() by Sourcehost,Latitude,Longitude,Country,Label,Destinationhost
+| where Destinationhost != "samplehost"
+| where Sourcehost != ""
 ```
 
 ![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/a4c6f87e-4554-4dbe-82b1-1b20a6a184cd)
