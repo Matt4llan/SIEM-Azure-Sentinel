@@ -64,6 +64,35 @@ In this step we will connect to our WIN10 server using RDP from my personal PC w
 
 ![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/4bf34c90-c6e2-4330-a251-e81127d331b4)
 
+Once loged on i'm going to Windows Event Viewer under Windows Logs > Security to look for the failed login. More specifically im looking at Event ID 4625.
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/0e94138d-23c4-484b-843b-6856173c9f3a)
+
+Id i open up the Event you can see the reason for failure and also we can see the IP Address which we are going to use later. What we will be doing with the IP Adress is get the IP adress with Powershell and then use a IP Geolocation API to give us a Longitude, latitude, city etc 
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/e3aa4be8-d393-4293-a0cf-6e0486927325)
+
+We will use: https://ipgeolocation.io/ to get the information we need.
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/78d1c1f1-5f06-49e1-ba00-e1bc4e975f3a)
+
+Next on the WIN10 machine i need to turn off the Windows Firewall as right now i cant even ping the machine from my local PC and we want people to find this machine.
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/882b5680-9224-4dc1-83c0-10a4f4c01589)
+
+I have disabled the firewall on both the 'Domain Profile' tab, 'Private Profile' and the 'Public Profile' tab
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/29320ea9-ba61-498d-ab37-b578af2708ce)
+
+## Step 7 - Geolocation API > Powershell
+
+
+
+
+
+
+
+
 
 
 
