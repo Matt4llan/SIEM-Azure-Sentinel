@@ -155,6 +155,8 @@ Failed_RDP_GEO_CL
 | summarize event_count=count() by Sourcehost,Latitude,Longitude,Country,Label,Destinationhost
 ```
 
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/a4c6f87e-4554-4dbe-82b1-1b20a6a184cd)
+
 
 
 
