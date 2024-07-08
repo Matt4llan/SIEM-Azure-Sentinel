@@ -86,6 +86,23 @@ I have disabled the firewall on both the 'Domain Profile' tab, 'Private Profile'
 
 ## Step 7 - Geolocation API > Powershell
 
+Im going to copy the attched 'Custom_Security_Log_Exporter.ps1' script into Powershell ISE on the virtual WIN10 machine adding in the API i created from 'https://ipgeolocation.io/' and save it to the desktop as 'Log_Exporter.ps1'
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/5b20f67b-d01a-4b78-a6d8-de21579b31e7)
+
+What this script will do is contantly looks through the event log grabs all the failed login details like IP address and then runs it throught the Geolocate api and outputs this data to a new log file located in 'C:\ProgramData\$($LOGFILE_NAME)' This script needs to be running contantly to allow this to happen. This script has sample data that will be output to the log that will alow me to train Log Analytics Workspace to accept and parse out the date we want to our log.
+
+Lets run the script.
+
+We can see in purple the EventID 4625 failed login events.
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/17647a0b-e0cf-491c-8b0b-68bca74a6338)
+
+Opening up the log file we can see the sample data plus the failed logins from myself with all the extras data i mentioned earlier like Longitude and Latitude, City etc.
+
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/6a3cd009-da20-4a98-83d7-3d4ea5972723)
+
+
 
 
 
