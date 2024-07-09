@@ -176,8 +176,13 @@ Notice the space! I have now edited the script and removed the spaces from the l
 
 Date: 08/07/24 - I will leave all this set for a day or 2 then come back with an updated screen shot of anyone attempting to log into our honeypot server.
 
+Date: 09/07/24 - Its now been about 24hrs since i last looked at the map, and if im honest im shocked at how quickly this is dicoverable and people activly found it.
 
+Below is the latest screen shot:
 
+![image](https://github.com/Matt4llan/SIEM-Azure-Sentinel/assets/156334555/08a0553a-521c-47bc-b2ae-e01ee4cc06a7)
+
+There is more to on this lab like securing everything and adding additional reporting features but for now this has been great fun setting this up. Some parts have been easy some have taken some time to configure like getting the exact KQL query to set this map up. This has given me great exposure to Microsoft Azure, setting up servers, Workspaces, Sentinel and workbooks.
 
 
 
