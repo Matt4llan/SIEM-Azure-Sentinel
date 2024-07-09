@@ -176,7 +176,7 @@ Notice the space! I have now edited the script and removed the spaces from the l
 
 Date: 08/07/24 - I will leave all this set for a day or 2 then come back with an updated screen shot of anyone attempting to log into our honeypot server.
 
-Date: 09/07/24 - Its now been about 24hrs since i last looked at the map, and if im honest im shocked at how quickly this is dicoverable and people activly found it.
+Date: 09/07/24 - Its now been about 24hrs since i last looked at the map, and if im honest im shocked at how quickly this was discoverable and people activly found it.
 
 Below is the latest screen shot:
 
